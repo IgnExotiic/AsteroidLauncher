@@ -1,3 +1,40 @@
+const clientId = '1138537550542295111';
+const DiscordRPC = require('discord-rpc');
+const RPC = new DiscordRPC.Client({ transport: 'ipc'});
+
+DiscordRPC.register(clientId);
+
+async function setActivity() {
+   if (!RPC) return;
+   RPC.setActivity({
+       state: `Jugando a "Squidgames 2"`,
+       startTimestamp: Date.now(),
+       largeImageKey: 'asteroid',
+       largeImageText: `Asteroid Studios`,
+       instance: false,
+       buttons: [
+           {
+               label: `Discord Asteroid Studios`,
+               url: `https://discord.gg/8MTbZVA37Q`,
+           },
+           {
+               label: `Twitter Asteroid Studios`,
+               url: `https://twitter.com/AsteroidStudiio`,
+           }
+       ]
+   });
+};
+
+RPC.on('ready', async () => {
+   setActivity();
+
+   setInterval(() => {
+       setActivity();
+   }, 86400 * 1000);
+});
+
+RPC.login({ clientId }).catch(err => console.error(err));
+
 const { app, ipcMain } = require('electron');
 const { Microsoft } = require('minecraft-java-core');
 const { autoUpdater } = require('electron-updater')
