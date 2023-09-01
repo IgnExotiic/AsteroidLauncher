@@ -255,20 +255,8 @@ class Home {
         document.querySelector('.Twitter').addEventListener('click', () => {
             this.openlink('https://twitter.com/AsteroidStudiio');
         })
-        document.querySelector('.Github').addEventListener('click', () => {
-            this.openlink('https://github.com');
-        })
         document.querySelector('.Youtube').addEventListener('click', () => {
             this.openlink('https://www.youtube.com/@AsteroidStudiios');
-        })
-        document.querySelector('.Instagram').addEventListener('click', () => {
-            this.openlink('https://instagram.com');
-        })
-        document.querySelector('.Twitch').addEventListener('click', () => {
-            this.openlink('https://twitch.tv');
-        })
-        document.querySelector('.MyWebsite').addEventListener('click', () => {
-            this.openlink('https://fefe-du-973.fr');
         })
     }
 
