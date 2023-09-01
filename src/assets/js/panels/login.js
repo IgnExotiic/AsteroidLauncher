@@ -114,11 +114,11 @@ class Login {
             loginBtn.disabled = true;
             mailInput.disabled = true;
             passwordInput.disabled = true;
-            infoLogin.innerHTML = "Connexion en cours...";
+            infoLogin.innerHTML = "Conexión actual...";
 
 
             if (mailInput.value == "") {
-                infoLogin.innerHTML = "Entrez votre adresse email / Nom d'utilisateur"
+                infoLogin.innerHTML = "Ingrese su dirección de correo electrónico / nombre de usuario"
                 cancelMojangBtn.disabled = false;
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
@@ -127,7 +127,7 @@ class Login {
             }
 
             if (passwordInput.value == "") {
-                infoLogin.innerHTML = "Entrez votre mot de passe"
+                infoLogin.innerHTML = "Ingresa tu contraseña"
                 cancelMojangBtn.disabled = false;
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
@@ -143,7 +143,7 @@ class Login {
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
                 passwordInput.disabled = false;
-                infoLogin.innerHTML = 'Adresse E-mail ou mot de passe invalide'
+                infoLogin.innerHTML = 'Dirección de correo electrónico o contraseña no válidos'
                 return
             }
 
@@ -185,7 +185,7 @@ class Login {
         let loginBtn = document.querySelector(".login-btn")
         let mojangBtn = document.querySelector('.mojang')
 
-        mojangBtn.innerHTML = "Crack"
+        mojangBtn.innerHTML = "Version No Premium"
 
         mojangBtn.addEventListener("click", () => {
             document.querySelector(".login-card").style.display = "none";

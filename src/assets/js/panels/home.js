@@ -57,7 +57,7 @@ class Home {
                         <div class="news-content">
                             <div class="bbWrapper">
                                 <p>${News.content.replace(/\n/g, '</br>')}</p>
-                                <p class="news-author">Auteur,<span> ${News.author}</span></p>
+                                <p class="news-author">Autor,<span> ${News.author}</span></p>
                             </div>
                         </div>`
                     news.appendChild(blockNews);
@@ -80,7 +80,7 @@ class Home {
                 </div>
                 <div class="news-content">
                     <div class="bbWrapper">
-                        <p>Impossible de contacter le serveur des news.</br>Merci de vérifier votre configuration.</p>
+                    <p>No se puede contactar con el servidor de noticias.</br>Compruebe su configuración.</p>
                     </div>
                 </div>`
             // news.appendChild(blockNews);
@@ -161,7 +161,7 @@ class Home {
 
             launch.on('progress', (progress, size) => {
                 progressBar.style.display = "block"
-                document.querySelector(".text-download").innerHTML = `Téléchargement ${((progress / size) * 100).toFixed(0)}%`
+                document.querySelector(".text-download").innerHTML = `Descargando ${((progress / size) * 100).toFixed(0)}%`
                 ipcRenderer.send('main-window-progress', { progress, size })
                 info.style.width = "200px"
                 progressBar.value = progress;
@@ -172,7 +172,7 @@ class Home {
 
             launch.on('check', (progress, size) => {
                 progressBar.style.display = "block"
-                document.querySelector(".text-download").innerHTML = `Vérification ${((progress / size) * 100).toFixed(0)}%`
+                document.querySelector(".text-download").innerHTML = `Verificando.. ${((progress / size) * 100).toFixed(0)}%`
                 document.querySelector(".text-download").style.display = "inline"
                 progressBar.value = progress;
                 progressBar.max = size;
@@ -199,7 +199,7 @@ class Home {
                 if (launcherSettings.launcher.close === 'close-launcher') ipcRenderer.send("main-window-hide");
                 ipcRenderer.send('main-window-progress-reset')
                 progressBar.style.display = "none"
-                info.innerHTML = `Demarrage en cours...`
+                info.innerHTML = `Iniciando...`
                 info.style.width = "200px"
                 console.log(e);
             });
@@ -210,7 +210,7 @@ class Home {
                 info.style.display = "none"
                 playBtn.style.display = "block"
                 info.style.width = "140px"
-                info.innerHTML = `Vérification <img style="width:28px;float:right;vertical-align: middle;" src="assets/images/background/492329d446c422b0483677d0318ab4fa.gif">`
+                info.innerHTML = `Verificando.. <img style="width:28px;float:right;vertical-align: middle;" src="assets/images/background/492329d446c422b0483677d0318ab4fa.gif">`
                 new logger('Launcher', '#7289da');
                 
                 console.log('Close');
@@ -231,7 +231,7 @@ class Home {
 
         if (!serverPing.error) {
             nameServer.textContent = this.config.status.nameServer;
-            serverMs.innerHTML = `<span class="green">En ligne</span> - ${serverPing.ms}ms`;
+            serverMs.innerHTML = `<span class="green">Online</span> - ${serverPing.ms}ms`;
             online.classList.toggle("off");
             playersConnected.textContent = serverPing.playersConnect;
         } else if (serverPing.error) {
@@ -250,16 +250,16 @@ class Home {
             changePanel('panelSkin');
         });
         document.querySelector('.Discord').addEventListener('click', () => {
-            this.openlink('https://discord.com');
+            this.openlink('https://discord.gg/8MTbZVA37Q');
         })
         document.querySelector('.Twitter').addEventListener('click', () => {
-            this.openlink('https://twitter.com');
+            this.openlink('https://twitter.com/AsteroidStudiio');
         })
         document.querySelector('.Github').addEventListener('click', () => {
             this.openlink('https://github.com');
         })
         document.querySelector('.Youtube').addEventListener('click', () => {
-            this.openlink('https://youtube.com');
+            this.openlink('https://www.youtube.com/@AsteroidStudiios');
         })
         document.querySelector('.Instagram').addEventListener('click', () => {
             this.openlink('https://instagram.com');
@@ -281,7 +281,7 @@ class Home {
         let year = date.getFullYear()
         let month = date.getMonth() + 1
         let day = date.getDate()
-        let allMonth = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
+        let allMonth = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
         return { year: year, month: allMonth[month - 1], day: day }
     }
 }
