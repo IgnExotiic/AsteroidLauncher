@@ -1,11 +1,11 @@
 {
     "name": "asteroid_launcher",
     "preductname": "Asteroid Launcher",
-    "version": "1.4.5",
+    "version": "1.4.6",
     "description": "Launcher de Asteroid Studios",
     "main": "src/app.js",
     "author": "IgnExotic",
-    "url": "http://hypernw.fun/bingo",
+    "url": "http://hypernw.fun/squidgames2",
     "engines": {
         "node": "16.x.x"
     },
